@@ -17,7 +17,7 @@ import java.util.Map;
  * @author zlt
  * @date 2020/3/30
  * <p>
- * Blog: https://blog.csdn.net/zlt2000
+ * Blog: https://zlt2000.gitee.io
  * Github: https://github.com/zlt2000
  */
 public class JsonErrorWebExceptionHandler extends DefaultErrorWebExceptionHandler {
@@ -50,8 +50,7 @@ public class JsonErrorWebExceptionHandler extends DefaultErrorWebExceptionHandle
      */
     @Override
     protected HttpStatus getHttpStatus(Map<String, Object> errorAttributes) {
-        int statusCode = (int) errorAttributes.get("code");
-        return HttpStatus.valueOf(statusCode);
+        return HttpStatus.INTERNAL_SERVER_ERROR;
     }
 
     /**
